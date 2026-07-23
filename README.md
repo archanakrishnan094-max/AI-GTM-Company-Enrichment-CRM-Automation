@@ -300,6 +300,6 @@ AI Automation | GTM Engineering | Workflow Automation | HubSpot CRM | n8n | Clay
 
 **LinkedIn:** (Add your LinkedIn URL)
 
-**GitHub:** (Add your GitHub URL)
+**GitHub:** [https://github.com/archanakrishnan094-max]
 
 
