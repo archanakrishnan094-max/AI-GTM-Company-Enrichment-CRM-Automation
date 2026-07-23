@@ -226,6 +226,7 @@ For each company the workflow generates:
 Include:
 
 1. Clay Enrichment Table
+[https://github.com/archanakrishnan094-max/AI-GTM-Company-Enrichment-CRM-Automation/blob/main/Screenshots/clay_enrichment_table_0.png.png]
    
 2. Complete n8n Workflow
  
