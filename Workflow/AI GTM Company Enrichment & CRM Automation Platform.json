@@ -1,0 +1,889 @@
+{
+  "name": "AI GTM Company Enrichment & CRM Automation Platform",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me",
+      "typeVersion": 1,
+      "position": [
+        5744,
+        2368
+      ],
+      "id": "c84e6f72-dc22-4974-b0c2-d099186570c7",
+      "placeholder": true
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        5280,
+        2080
+      ],
+      "id": "e2c96cc8-bc06-4861-9361-c41eae73a037",
+      "name": "🚀 Start Workflow"
+    },
+    {
+      "parameters": {
+        "jsCode": "const results = [];\n\nfor (let i = 0; i < items.length; i++) {\n\n  let raw = items[i].json.text;\n\n  // Remove markdown if present\n  raw = raw.replace(/```json/g, \"\").replace(/```/g, \"\").trim();\n\n  // Convert text into JSON\n  const data = JSON.parse(raw);\n\n  const processItem = $('🔁 Process Companies').all()[i].json;\n  results.push({\n    json: {\n      company_name: data.company_name || processItem[\"Company Name\"] || \"\",\n      website: data.website || processItem[\"New column(3)\"] || \"\",\n      industry: data.industry || processItem[\"Industry\"] || \"\",\n      work_email: data.work_email || processItem[\"Work Email\"] || \"\",\n\n      business_summary: data.business_summary || processItem[\"Company Summary\"] || \"\",\n      target_customers: data.target_customers || \"\",\n      products_services: data.products_services || \"\",\n      pain_points: data.pain_points || \"\",\n      opportunities: data.opportunities || processItem[\"AI Automation Opportunities\"] || \"\",\n      recommended_solution: data.recommended_solution || \"\",\n\n      crm_stage: data.crm_stage || \"New Lead\",\n      lead_score: data.lead_score || sheetItem[\"Lead Score\"] || \"\",\n      priority: data.priority || \"\",\n\n      personalized_email_opening: data.personalized_email_opening || processItem[\"Personalized Email Opener\"] || \"\",\n      cold_email_subject: data.cold_email_subject || \"\",\n      cold_email_draft: data.cold_email_draft || processItem[\"Cold email draft\"] || \"\"\n    }\n  });\n\n}\n\nreturn results;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        6256,
+        1984
+      ],
+      "id": "56ef0661-48d7-4a93-b0b5-244c34fde91b",
+      "name": "🔄 Research JSON Formatter",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1dNCfDwUchpCN7RjflomXR0R0j45fZ7bMUgjQS5CF6q8",
+          "mode": "list",
+          "cachedResultName": "AI GTM Company Enrichment",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1dNCfDwUchpCN7RjflomXR0R0j45fZ7bMUgjQS5CF6q8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1043623553,
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1dNCfDwUchpCN7RjflomXR0R0j45fZ7bMUgjQS5CF6q8/edit#gid=1043623553"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "company_name": "={{ $('🔁 Process Companies').item.json['Company Name'] }}",
+            "website": "={{ $json.website }}",
+            "lead_score": "={{ $json.lead_score }}",
+            "priority": "={{ $json.priority }}",
+            "crm_stage": "={{ $json.crm_stage }}",
+            "recommended_solution": "={{ $json.recommended_solution }}",
+            "pain_points": "={{ $json.pain_points }}",
+            "products_services": "={{ $json.products_services }}",
+            "target_customers": "={{ $json.target_customers }}",
+            "industry": "={{ $json.industry }}",
+            "business_summary": "={{ $json.business_summary }}",
+            "cold_email_subject": "={{ $json.cold_email_subject }}",
+            "cold_email_draft": "={{ $json.cold_email_draft }}",
+            "personalized_email_opening": "={{ $json.personalized_email_opening }}",
+            "work_email": "={{ $('📥 Import Company List').item.json['Work Email'] }}",
+            "opportunities": "={{ $json.opportunities }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "company_name",
+              "displayName": "company_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "website",
+              "displayName": "website",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "industry",
+              "displayName": "industry",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "business_summary",
+              "displayName": "business_summary",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "target_customers",
+              "displayName": "target_customers",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "products_services",
+              "displayName": "products_services",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pain_points",
+              "displayName": "pain_points",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "opportunities",
+              "displayName": "opportunities",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "recommended_solution",
+              "displayName": "recommended_solution",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "crm_stage",
+              "displayName": "crm_stage",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "lead_score",
+              "displayName": "lead_score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "priority",
+              "displayName": "priority",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "work_email",
+              "displayName": "work_email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "personalized_email_opening",
+              "displayName": "personalized_email_opening",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "cold_email_subject",
+              "displayName": "cold_email_subject",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "cold_email_draft",
+              "displayName": "cold_email_draft",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        6464,
+        1984
+      ],
+      "id": "042e72c4-d54c-43fe-957b-94db14cd3d37",
+      "name": "📚 AI Research Repository",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "8CB3Xzbm0a3BuLQd",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "email": "={{$node[\"🔄 Research JSON Formatter\"].json.email}}",
+        "additionalFields": {
+          "firstName": "={{$node[\"🔄 Research JSON Formatter\"].json.first_name}}",
+          "lastName": "={{$node[\"🔄 Research JSON Formatter\"].json.last_name}}"
+        },
+        "options": {
+          "resolveData": true
+        }
+      },
+      "type": "n8n-nodes-base.hubspot",
+      "typeVersion": 2.2,
+      "position": [
+        6832,
+        1984
+      ],
+      "id": "80b65720-212e-4458-8165-7a8edb59908d",
+      "name": "👤 Create Contact (HubSpot)",
+      "alwaysOutputData": true,
+      "credentials": {
+        "hubspotOAuth2Api": {
+          "id": "KtvsIRiEo0MdrlWE",
+          "name": "HubSpot account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "resource": "deal",
+        "stage": "appointmentscheduled",
+        "additionalFields": {
+          "amount": "10000",
+          "associatedCompany": [
+            332694750955
+          ],
+          "description": "={{$node[\"🔄 Research JSON Formatter\"].json.business_summary}}",
+          "pipeline": "default"
+        }
+      },
+      "type": "n8n-nodes-base.hubspot",
+      "typeVersion": 2.2,
+      "position": [
+        6992,
+        1984
+      ],
+      "id": "6618a60f-e041-4968-8eec-607a0fad6eaa",
+      "name": "💼 Create Deal (HubSpot)",
+      "alwaysOutputData": true,
+      "credentials": {
+        "hubspotOAuth2Api": {
+          "id": "KtvsIRiEo0MdrlWE",
+          "name": "HubSpot account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "Lead Intake\n\nReads company names,\nwebsites and enrichment\ndata from Google Sheets.\n\nEach company is processed\nindividually.",
+        "height": 208,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        5472,
+        1856
+      ],
+      "id": "66ce6ade-8cb6-45d9-911b-db8882c26c6d",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "AI Research Engine\n\nUses Groq LLM to generate:\n\n• Business Summary\n• Products & Services\n• Target Customers\n• Pain Points\n• Opportunities\n• Recommended Solution\n• Lead Score\n• Priority\n• Cold Email Assets",
+        "height": 352,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        5888,
+        1600
+      ],
+      "id": "bada95a8-50a2-4b8b-be5f-21ded242cfd7",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "Data Transformation\n\nConverts AI response\ninto structured JSON\nfor downstream\nautomation.",
+        "height": 176
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        6224,
+        1776
+      ],
+      "id": "64336874-284e-44ef-9e27-4ed527c81dcf",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "HubSpot CRM Automation\n\nAutomatically creates:\n\n• Company\n\n(Optional)\n\n• Contact\n• Deal\n\ninside HubSpot CRM.",
+        "height": 320,
+        "width": 448,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        6688,
+        2176
+      ],
+      "id": "d771c755-ae2e-45fc-aaef-19c3b2b3d53e",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "CRM Activity Repository\n\nStores CRM activity\ninside Google Sheets\nfor audit,\ntracking\nand reporting.",
+        "height": 192,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        6880,
+        1472
+      ],
+      "id": "c5199ddf-1e0d-4fd7-9752-72090c8379c3",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "AI GTM Company Enrichment & CRM Automation Platform\n\nThis workflow automates:\n\n• Company Research\n• AI GTM Analysis\n• CRM Company Creation\n• AI Research Repository\n• CRM Activity Tracking\n\nBuilt using:\n• n8n\n• Groq LLM\n• Google Sheets\n• HubSpot CRM",
+        "height": 352,
+        "width": 560,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        4880,
+        1408
+      ],
+      "id": "cf625cfc-d9e1-46e5-914b-1b46c2ea3ee7",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1dNCfDwUchpCN7RjflomXR0R0j45fZ7bMUgjQS5CF6q8",
+          "mode": "list",
+          "cachedResultName": "AI GTM Company Enrichment",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1dNCfDwUchpCN7RjflomXR0R0j45fZ7bMUgjQS5CF6q8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1468621552,
+          "mode": "list",
+          "cachedResultName": "AI-GTM-Company-Enrichment-Fully-enriched-rows-export-1784697620409",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1dNCfDwUchpCN7RjflomXR0R0j45fZ7bMUgjQS5CF6q8/edit#gid=1468621552"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Company Name",
+              "lookupValue": "Stripe"
+            },
+            {
+              "lookupColumn": "Company Name",
+              "lookupValue": "Replit"
+            },
+            {
+              "lookupColumn": "Company Name",
+              "lookupValue": "Clay"
+            }
+          ]
+        },
+        "combineFilters": "OR",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        5488,
+        2080
+      ],
+      "id": "7a7838b9-9392-4b5a-89d1-ecb20f86c92a",
+      "name": "📥 Import Company List",
+      "alwaysOutputData": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "8CB3Xzbm0a3BuLQd",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "batchSize": 2,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        5696,
+        2080
+      ],
+      "id": "6133353f-f98a-42fe-b14d-357643d1b3b0",
+      "name": "🔁 Process Companies"
+    },
+    {
+      "parameters": {
+        "model": "llama-3.1-8b-instant",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        5904,
+        2144
+      ],
+      "id": "def4a2da-c866-4469-977c-db9d54b0eb30",
+      "name": "🤖 Groq LLM",
+      "credentials": {
+        "groqApi": {
+          "id": "lGrjJulBXv4MYnlZ",
+          "name": "Groq account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are an expert GTM (Go-To-Market) Revenue Intelligence Analyst.\n\nAnalyze the company using the provided information and generate structured business insights.\n\nCompany Name:\n{{ $json[\"Company Name\"] }}\n\nWebsite:\n{{ $json['New column(3)'] }}\n\nIndustry:\n{{ $json[\"Industry\"] }}\n\nCompany Summary:\n{{ $json[\"Company Summary\"] }}\n\nTop Business Challenges:\n{{ $json[\"Top 5 Challenges\"] }}\n\nPurchase Signals:\n{{ $json[\"AI Purchase Signals\"] }}\n\nCustomer Fit Score:\n{{ $json[\"Customer Fit Score\"] }}\n\nProvide the response in the following JSON format ONLY.\n\n{\n  \"company_name\":\"\",\n\"website\":\"\",\n  \"industry\":\"\",\n  \"business_summary\":\"\",\n  \"target_customers\":\"\",\n  \"products_services\":\"\",\n  \"pain_points\":\"\",\n  \"purchase_signals\":\"\",\n  \"customer_fit_score\":\"\",\n  \"priority\":\"\",\n\"lead_score\":\"\",\n  \"recommended_solution\":\"\",\n  \"personalized_email_opening\":\"\",\n  \"cold_email_subject\":\"\",\n  \"cold_email_draft\":\"\"\n\"work_email\":\"\"\n}\n\nRules:\n- Return valid JSON only.\n- Do not include markdown.\n- Do not include explanations.\n- Keep each field concise.\n- Business summary should be under 100 words.\n- Pain points should contain 3–5 key business challenges.\n- Priority should be High, Medium, or Low.\n",
+        "hasOutputParser": true,
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.9,
+      "position": [
+        5904,
+        1984
+      ],
+      "id": "c2d9122b-1a9a-4988-9a9d-fac78e0bacc4",
+      "name": "🧠 AI GTM Research Agent",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "resource": "company",
+        "name": "={{$node[\"🔄 Research JSON Formatter\"].json.company_name}}",
+        "additionalFields": {
+          "aboutUs": "={{ $json.business_summary }}",
+          "companyDomainName": "={{ $json.website }}",
+          "description": "={{$node[\"🔄 Research JSON Formatter\"].json.business_summary}}",
+          "websiteUrl": "={{ $json.website }}"
+        }
+      },
+      "type": "n8n-nodes-base.hubspot",
+      "typeVersion": 2.2,
+      "position": [
+        6672,
+        1984
+      ],
+      "id": "076ee986-714a-4497-ab2f-a28f9018b45a",
+      "name": "🏢 Create Company in HubSpot",
+      "alwaysOutputData": false,
+      "credentials": {
+        "hubspotOAuth2Api": {
+          "id": "KtvsIRiEo0MdrlWE",
+          "name": "HubSpot account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1dNCfDwUchpCN7RjflomXR0R0j45fZ7bMUgjQS5CF6q8",
+          "mode": "list",
+          "cachedResultName": "AI GTM Company Enrichment",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1dNCfDwUchpCN7RjflomXR0R0j45fZ7bMUgjQS5CF6q8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 892118719,
+          "mode": "list",
+          "cachedResultName": "Sheet2",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1dNCfDwUchpCN7RjflomXR0R0j45fZ7bMUgjQS5CF6q8/edit#gid=892118719"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "company_name": "={{ $('🔁 Process Companies').item.json['Company Name'] }}",
+            "website": "={{ $('🔁 Process Companies').item.json['New column(3)'] }}",
+            "industry": "={{ $('🔁 Process Companies').item.json.Industry }}",
+            "email": "={{ $('🔁 Process Companies').item.json['Work Email'] }}",
+            "business_summary": "={{ $('🔁 Process Companies').item.json['Company Summary'] }}",
+            "opportunities": "={{ $('🔁 Process Companies').item.json['AI Automation Opportunities'] }}",
+            "pain_points": "={{ $('📚 AI Research Repository').item.json.pain_points }}",
+            "products_services": "={{ $('📚 AI Research Repository').item.json.products_services }}",
+            "recommended_solution": "={{ $('📚 AI Research Repository').item.json.recommended_solution }}",
+            "crm_stage": "={{ $('📚 AI Research Repository').item.json.crm_stage }}",
+            "lead_score": "={{ $('🔄 Research JSON Formatter').item.json.lead_score }}",
+            "priority": "={{ $('📚 AI Research Repository').item.json.priority }}",
+            "target_customers": "={{ $('📚 AI Research Repository').item.json.target_customers }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "company_name",
+              "displayName": "company_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "website",
+              "displayName": "website",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "industry",
+              "displayName": "industry",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "email",
+              "displayName": "email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "business_summary",
+              "displayName": "business_summary",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "target_customers",
+              "displayName": "target_customers",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "products_services",
+              "displayName": "products_services",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pain_points",
+              "displayName": "pain_points",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "opportunities",
+              "displayName": "opportunities",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "recommended_solution",
+              "displayName": "recommended_solution",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "crm_stage",
+              "displayName": "crm_stage",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "lead_score",
+              "displayName": "lead_score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "priority",
+              "displayName": "priority",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        6928,
+        1696
+      ],
+      "id": "333d73bc-5264-4826-8ac0-76010394601c",
+      "name": "📊 CRM Activity Repository",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "8CB3Xzbm0a3BuLQd",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "AI Research Repository\n\nStores enriched\ncompany intelligence\ninside Google Sheets\nfor reporting and reuse.",
+        "height": 176,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        6400,
+        2160
+      ],
+      "id": "7d882222-9d85-4b5a-af06-85c0709c9089",
+      "name": "Sticky Note6"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Replace Me": {
+      "main": [
+        [
+          {
+            "node": "🔁 Process Companies",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🚀 Start Workflow": {
+      "main": [
+        [
+          {
+            "node": "📥 Import Company List",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🔄 Research JSON Formatter": {
+      "main": [
+        [
+          {
+            "node": "📚 AI Research Repository",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "📚 AI Research Repository": {
+      "main": [
+        [
+          {
+            "node": "🏢 Create Company in HubSpot",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "👤 Create Contact (HubSpot)": {
+      "main": [
+        [
+          {
+            "node": "💼 Create Deal (HubSpot)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "💼 Create Deal (HubSpot)": {
+      "main": [
+        []
+      ]
+    },
+    "📥 Import Company List": {
+      "main": [
+        [
+          {
+            "node": "🔁 Process Companies",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🔁 Process Companies": {
+      "main": [
+        [
+          {
+            "node": "🧠 AI GTM Research Agent",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Replace Me",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🤖 Groq LLM": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "🧠 AI GTM Research Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🧠 AI GTM Research Agent": {
+      "main": [
+        [
+          {
+            "node": "🔄 Research JSON Formatter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🏢 Create Company in HubSpot": {
+      "main": [
+        [
+          {
+            "node": "👤 Create Contact (HubSpot)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "📊 CRM Activity Repository",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "b9fcf59e-b314-4a19-97b8-64ff666a3d0b",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "28fbe838cad5119b26fc53cf1cbbccc09a2d841c26e6cb5b81d4dfd1cac42f9f"
+  },
+  "nodeGroups": [],
+  "id": "grpawY0ib54GEtkb",
+  "tags": []
+}
