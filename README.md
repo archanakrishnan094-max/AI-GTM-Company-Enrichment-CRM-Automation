@@ -229,11 +229,15 @@ Include:
    
 2. Complete n8n Workflow
  
-4. AI Revenue Intelligence Agent
-5. Research JSON Formatter
-6. AI Research Repository (Google Sheets)
-7. HubSpot Company Record
-8. CRM Activity Repository
+3. AI Revenue Intelligence Agent
+ 
+4. Research JSON Formatter
+ 
+5. AI Research Repository (Google Sheets)
+
+6. HubSpot Company Record
+
+7. CRM Activity Repository
 
 ---
 
