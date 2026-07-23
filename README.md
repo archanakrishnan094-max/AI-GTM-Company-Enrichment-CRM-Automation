@@ -1,8 +1,7 @@
 # 🚀 AI GTM Company Enrichment & CRM Automation Platform
 
-An AI-powered Go-To-Market (GTM) automation workflow built using **n8n**, **Groq LLM**, **Google Sheets**, and **HubSpot CRM**.
-
-This workflow automates company research, generates GTM intelligence, creates CRM records, and stores AI-generated insights for future sales activities.
+An AI-powered GTM automation platform built using Clay, n8n, Groq LLM, Google Sheets, and HubSpot CRM. Company data is first enriched using Clay, then processed
+through an automated AI workflow to generate GTM insights, lead intelligence, CRM records, and outreach-ready research.
 
 ---
 
@@ -66,10 +65,11 @@ Automatically creates:
 
 # 🛠 Tech Stack
 
-* n8n
-* Groq LLM
-* Google Sheets
-* HubSpot CRM
+Clay (Company Enrichment)
+n8n
+Groq LLM
+Google Sheets
+HubSpot CRM
 
 ---
 
