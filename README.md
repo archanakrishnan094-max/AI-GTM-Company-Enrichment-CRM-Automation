@@ -244,6 +244,7 @@ Include:
 [https://github.com/archanakrishnan094-max/AI-GTM-Company-Enrichment-CRM-Automation/blob/main/Screenshots/Hubspot_Company_node_5.png.png]
  
 7. CRM Activity Repository
+[https://github.com/archanakrishnan094-max/AI-GTM-Company-Enrichment-CRM-Automation/blob/main/Screenshots/CRM_Activity_repository_6.png.png]
 
 ---
 
