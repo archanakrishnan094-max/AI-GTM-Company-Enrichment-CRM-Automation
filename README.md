@@ -1,43 +1,43 @@
 # 🚀 AI GTM Company Enrichment & CRM Automation Platform
 
-An AI-powered GTM automation platform built using Clay, n8n, Groq LLM, Google Sheets, and HubSpot CRM. Company data is first enriched using Clay, then processed
-through an automated AI workflow to generate GTM insights, lead intelligence, CRM records, and outreach-ready research.
+An AI-powered Go-To-Market (GTM) automation platform built using **Clay**, **n8n**, **Groq LLM**, **Google Sheets**, and **HubSpot CRM**.
+
+The project enriches company data using **Clay**, processes it through an AI-powered n8n workflow, generates GTM insights, and automatically creates CRM-ready company records in HubSpot.
 
 ---
 
 # 📌 Overview
 
-Sales teams spend significant time researching companies before outreach.
+Sales teams spend significant time researching companies before engaging with prospects. This project automates that workflow.
 
-This workflow automates that process by:
-
-* Researching companies using AI
-* Generating structured GTM insights
-* Identifying customer pain points
-* Recommending solution opportunities
-* Calculating lead priority
-* Creating companies inside HubSpot CRM
-* Storing research inside Google Sheets
-
-The result is a complete AI-powered company enrichment pipeline.
+The process begins with **company enrichment in Clay**, where company information is enhanced with business intelligence. The enriched dataset is then imported into **n8n**, where AI generates structured GTM insights, lead intelligence, personalized outreach content, and CRM-ready data before storing everything in Google Sheets and HubSpot.
 
 ---
 
-# 🎯 Features
+# 🎯 Key Features
 
-✅ Company Research
+### 🟢 Company Enrichment (Clay)
 
+* Company enrichment using Clay
+* Company profile enhancement
+* Business information enrichment
+* Industry information
 * Company summary
-* Industry
+* Website enrichment
+* Executive research
+* GTM-ready company dataset
+
+---
+
+### 🤖 AI GTM Intelligence (Groq LLM)
+
+Automatically generates:
+
+* Business Summary
 * Products & Services
 * Target Customers
-
----
-
-✅ GTM Intelligence
-
-* Pain Points
-* Business Opportunities
+* Business Challenges
+* AI Automation Opportunities
 * Recommended Solution
 * CRM Stage
 * Lead Score
@@ -45,7 +45,9 @@ The result is a complete AI-powered company enrichment pipeline.
 
 ---
 
-✅ Sales Enablement
+### 📧 AI Sales Enablement
+
+Generates:
 
 * Personalized Email Opening
 * Cold Email Subject
@@ -53,41 +55,53 @@ The result is a complete AI-powered company enrichment pipeline.
 
 ---
 
-✅ CRM Automation
+### ⚙ CRM Automation
 
-Automatically creates:
+Automatically:
 
-* Company in HubSpot
-* CRM Activity Repository
-* AI Research Repository
+* Creates Company in HubSpot
+* Stores AI Research Repository
+* Stores CRM Activity Repository
 
 ---
 
 # 🛠 Tech Stack
 
-Clay (Company Enrichment)
-n8n
-Groq LLM
-Google Sheets
-HubSpot CRM
+* Clay (Company Enrichment)
+* n8n
+* Groq LLM
+* Google Sheets
+* HubSpot CRM
 
 ---
 
-# 📊 Workflow Architecture
+# 🏗 Workflow Architecture
 
-Company List (Google Sheets)
-
-↓
-
-Import Companies
+Company List
 
 ↓
 
-Loop Over Companies
+Clay Company Enrichment
 
 ↓
 
-Groq AI Research Agent
+Export Enriched Dataset
+
+↓
+
+Google Sheets
+
+↓
+
+Import Company List (n8n)
+
+↓
+
+Process Companies
+
+↓
+
+Groq AI Revenue Intelligence Agent
 
 ↓
 
@@ -95,11 +109,11 @@ Research JSON Formatter
 
 ↓
 
-AI Research Repository (Google Sheets)
+AI Research Repository
 
 ↓
 
-Create Company in HubSpot
+HubSpot Company Creation
 
 ↓
 
@@ -107,87 +121,98 @@ CRM Activity Repository
 
 ---
 
-# 📂 Workflow Steps
+# ⚙ Workflow Steps
 
-## 1. Import Company List
+## 1. Company Enrichment (Clay)
 
-Reads companies from Google Sheets.
+Company information is enriched using Clay before entering the automation workflow.
 
-Input Example
+The enriched dataset includes:
 
 * Company Name
 * Website
+* Industry
+* Company Summary
+* Business Challenges
+* Purchase Signals
+* AI Automation Opportunities
+* Work Email
 
 ---
 
-## 2. Process Companies
+## 2. Import Company List
 
-Processes companies one by one.
+Reads the Clay-enriched dataset from Google Sheets.
 
 ---
 
-## 3. AI GTM Research Agent
+## 3. Process Companies
 
-Uses Groq LLM to generate
+Processes companies sequentially inside n8n.
+
+---
+
+## 4. AI Revenue Intelligence Agent
+
+Groq LLM generates:
 
 * Business Summary
 * Products & Services
 * Target Customers
-* Pain Points
-* Opportunities
+* Business Pain Points
+* Recommended Solution
 * Lead Score
+* CRM Stage
 * Priority
-* Personalized Email
+* Personalized Email Opening
+* Cold Email Subject
 * Cold Email Draft
 
 ---
 
-## 4. JSON Formatter
+## 5. Research JSON Formatter
 
-Converts AI response into structured JSON.
-
----
-
-## 5. AI Research Repository
-
-Stores AI-generated research inside Google Sheets.
+Transforms AI output into structured JSON for downstream automation.
 
 ---
 
-## 6. HubSpot Automation
+## 6. AI Research Repository
 
-Creates Company records automatically.
+Stores AI-generated GTM research in Google Sheets.
 
-Mapped Properties
+---
+
+## 7. HubSpot CRM Automation
+
+Automatically creates Company records inside HubSpot.
+
+Mapped properties include:
 
 * Company Name
 * Website
 * About Us
 * Description
-* Domain
-* CRM Stage
-* Lead Score
-* Priority
+* Company Domain
+* Industry
 
 ---
 
-## 7. CRM Activity Repository
+## 8. CRM Activity Repository
 
-Stores CRM activity logs for reporting.
+Logs CRM activity after successful HubSpot company creation.
 
 ---
 
-# 📈 Example Output
+# 📊 Example AI Output
 
 For each company the workflow generates:
 
-* Business Summary
+* Company Summary
 * Products & Services
 * Target Customers
-* Pain Points
-* Opportunities
+* Business Challenges
+* AI Automation Opportunities
 * Recommended Solution
-* CRM Stage
 * Lead Score
 * Priority
 * Personalized Email Opening
@@ -198,37 +223,36 @@ For each company the workflow generates:
 
 # 📸 Screenshots
 
-Add screenshots here.
+Include:
 
-Recommended:
-
-1. Complete Workflow
-2. AI Research Output
-3. JSON Formatter
-4. Google Sheets Repository
-5. HubSpot Company Record
+1. Clay Enrichment Table
+2. Complete n8n Workflow
+3. AI Revenue Intelligence Agent
+4. Research JSON Formatter
+5. AI Research Repository (Google Sheets)
+6. HubSpot Company Record
+7. CRM Activity Repository
 
 ---
 
 # 🎥 Demo
 
-Loom Video
+Loom Walkthrough
 
-(Add your Loom link)
+(Add your Loom video link)
 
 ---
 
-# 💡 Future Improvements
+# 📈 Future Improvements
 
-* Clay Integration
-* Apollo Integration
-* LinkedIn Data Enrichment
-* Multi-LLM Support
-* Contact Creation
+* Live Clay API Integration (Growth Plan)
+* Real-time Company Enrichment
+* Contact Enrichment
+* HubSpot Contact Creation
 * Deal Creation
 * Email Automation
-* Lead Scoring Improvements
 * CRM Analytics Dashboard
+* Multi-LLM Support
 
 ---
 
@@ -236,14 +260,22 @@ Loom Video
 
 This project demonstrates:
 
+* Clay Company Enrichment
 * AI Workflow Automation
+* GTM Research Automation
 * Prompt Engineering
 * JSON Data Transformation
-* CRM Automation
-* HubSpot Integration
 * Google Sheets Automation
+* HubSpot CRM Automation
 * n8n Workflow Design
-* LLM Integration
+* LLM Integration using Groq
+* AI-powered Sales Enablement
+
+---
+
+# 💼 Business Impact
+
+This workflow reduces manual GTM research by automating company enrichment, AI-powered business analysis, CRM creation, and sales preparation, enabling faster prospect research and improved sales productivity.
 
 ---
 
@@ -251,10 +283,10 @@ This project demonstrates:
 
 **Archana Krishnan**
 
-AI Automation | GTM Automation | Workflow Automation | HubSpot | n8n | Generative AI
+AI Automation | GTM Engineering | Workflow Automation | HubSpot CRM | n8n | Clay | Generative AI
 
-LinkedIn:
-(Add LinkedIn URL)
+**LinkedIn:** (Add your LinkedIn URL)
 
-GitHub:
-(Add GitHub URL)
+**GitHub:** (Add your GitHub URL)
+
+
