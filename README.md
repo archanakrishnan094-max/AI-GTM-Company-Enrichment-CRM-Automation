@@ -298,7 +298,7 @@ This workflow reduces manual GTM research by automating company enrichment, AI-p
 
 AI Automation | GTM Engineering | Workflow Automation | HubSpot CRM | n8n | Clay | Generative AI
 
-**LinkedIn:** (Add your LinkedIn URL)
+**LinkedIn:** [www.linkedin.com/in/archana-krishnan-303bb681]
 
 **GitHub:** [https://github.com/archanakrishnan094-max]
 
