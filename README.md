@@ -235,7 +235,7 @@ Include:
  [https://github.com/archanakrishnan094-max/AI-GTM-Company-Enrichment-CRM-Automation/blob/main/Screenshots/AI_Research_output_2.png.png]
 
 4. Research JSON Formatter
-
+[https://github.com/archanakrishnan094-max/AI-GTM-Company-Enrichment-CRM-Automation/blob/main/Screenshots/JSON_Formatter_3.png.png]
  
 5. AI Research Repository (Google Sheets)
 
