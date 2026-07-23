@@ -238,7 +238,7 @@ Include:
 [https://github.com/archanakrishnan094-max/AI-GTM-Company-Enrichment-CRM-Automation/blob/main/Screenshots/JSON_Formatter_3.png.png]
  
 5. AI Research Repository (Google Sheets)
-
+[https://github.com/archanakrishnan094-max/AI-GTM-Company-Enrichment-CRM-Automation/blob/main/Screenshots/Google%20Sheets%20Repository_4.png.png]
 
 6. HubSpot Company Record
 
