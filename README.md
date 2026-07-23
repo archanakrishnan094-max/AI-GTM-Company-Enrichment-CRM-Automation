@@ -229,16 +229,17 @@ Include:
 [https://github.com/archanakrishnan094-max/AI-GTM-Company-Enrichment-CRM-Automation/blob/main/Screenshots/clay_enrichment_table_0.png.png]
    
 2. Complete n8n Workflow
- 
-3. AI Revenue Intelligence Agent
- 
-4. Research JSON Formatter
- 
-5. AI Research Repository (Google Sheets)
+[ https://github.com/archanakrishnan094-max/AI-GTM-Company-Enrichment-CRM-Automation/blob/main/Screenshots/Complete_Workflow_1.png.png]
 
-6. HubSpot Company Record
+4. AI Revenue Intelligence Agent
+ 
+5. Research JSON Formatter
+ 
+6. AI Research Repository (Google Sheets)
 
-7. CRM Activity Repository
+7. HubSpot Company Record
+
+8. CRM Activity Repository
 
 ---
 
