@@ -242,11 +242,8 @@ Include:
 
 6. HubSpot Company Node
 [https://github.com/archanakrishnan094-max/AI-GTM-Company-Enrichment-CRM-Automation/blob/main/Screenshots/Hubspot_Company_node_5.png.png]
-
-7. Hubspot Company Recode (Google sheets)
-[https://github.com/archanakrishnan094-max/AI-GTM-Company-Enrichment-CRM-Automation/blob/main/Screenshots/HubSpot_Company_Record_6.png.png]
  
-8. CRM Activity Repository
+7. CRM Activity Repository
 
 ---
 
